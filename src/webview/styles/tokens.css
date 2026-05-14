@@ -1,0 +1,55 @@
+:root {
+  /* Map VSCode semantic colors to design tokens */
+  --bs-bg: var(--vscode-sideBar-background, #1e1e1e);
+  --bs-surface: var(--vscode-input-background, #2d2d2d);
+  --bs-surface-hover: var(--vscode-list-hoverBackground, #2a2d2e);
+  --bs-border: var(--vscode-input-border, transparent);
+  --bs-text: var(--vscode-foreground, #cccccc);
+  --bs-text-muted: var(--vscode-descriptionForeground, #858585);
+  --bs-text-subtle: var(--vscode-disabledForeground, #585858);
+  --bs-accent: var(--vscode-focusBorder, #007fd4);
+  --bs-selection: var(--vscode-list-activeSelectionBackground, #094771);
+  --bs-separator: var(--vscode-panel-border, #444444);
+
+  /* Kind badge colors */
+  --bs-kind-variable: var(--vscode-debugTokenExpression-name, #9cdcfe);
+  --bs-kind-function: var(--vscode-symbolIcon-functionForeground, #dcdcaa);
+  --bs-kind-string: var(--vscode-debugTokenExpression-string, #ce9178);
+
+  --bs-kind-variable-bg: color-mix(in srgb, var(--bs-kind-variable) 15%, transparent);
+  --bs-kind-function-bg: color-mix(in srgb, var(--bs-kind-function) 15%, transparent);
+  --bs-kind-string-bg: color-mix(in srgb, var(--bs-kind-string) 15%, transparent);
+
+  /* Spacing — 4pt grid */
+  --bs-space-1: 4px;
+  --bs-space-2: 8px;
+  --bs-space-3: 12px;
+  --bs-space-4: 16px;
+  --bs-space-5: 20px;
+  --bs-space-6: 24px;
+
+  /* Type scale */
+  --bs-font-xs: 10px;
+  --bs-font-sm: 11px;
+  --bs-font-base: 13px;
+  --bs-font-mono: var(--vscode-editor-font-family, 'Menlo', 'Consolas', monospace);
+
+  /* Radius */
+  --bs-radius-sm: 3px;
+  --bs-radius-md: 6px;
+  --bs-radius-lg: 8px;
+
+  /* Motion */
+  --bs-ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --bs-duration-fast: 80ms;
+  --bs-duration-base: 120ms;
+  --bs-duration-slow: 200ms;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --bs-duration-fast: 0ms;
+    --bs-duration-base: 0ms;
+    --bs-duration-slow: 0ms;
+  }
+}

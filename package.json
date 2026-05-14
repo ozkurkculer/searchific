@@ -1,0 +1,87 @@
+{
+  "name": "better-search",
+  "displayName": "Better Search",
+  "description": "Semantic search for TypeScript — filter results by variable, function, or string with type inference.",
+  "version": "0.0.1",
+  "publisher": "ozkurkculer",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ozkurkculer/better-search.git"
+  },
+  "engines": {
+    "vscode": "^1.120.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "better-search",
+          "title": "Better Search",
+          "icon": "media/search-icon.svg"
+        }
+      ]
+    },
+    "views": {
+      "better-search": [
+        {
+          "type": "webview",
+          "id": "betterSearch.view",
+          "name": "Search",
+          "visibility": "visible"
+        }
+      ]
+    },
+    "commands": [
+      {
+        "command": "betterSearch.reveal",
+        "title": "Better Search: Reveal Location"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "yarn run package",
+    "compile": "yarn run check-types && yarn run lint && node esbuild.js && yarn run build:webview",
+    "watch": "npm-run-all -p watch:esbuild watch:tsc watch:webview",
+    "watch:esbuild": "node esbuild.js --watch",
+    "watch:tsc": "tsc --noEmit --watch --project tsconfig.json",
+    "watch:webview": "node scripts/build-webview.mjs --watch",
+    "build:webview": "node scripts/build-webview.mjs",
+    "package": "yarn run check-types && yarn run lint && node esbuild.js --production && node scripts/build-webview.mjs --production",
+    "compile-tests": "tsc -p . --outDir out",
+    "watch-tests": "tsc -p . -w --outDir out",
+    "pretest": "yarn run compile-tests && yarn run compile && yarn run lint",
+    "check-types": "tsc --noEmit",
+    "lint": "eslint src",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.10",
+    "@types/node": "22.x",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "@types/vscode": "^1.120.0",
+    "@vitejs/plugin-react": "^6.0.1",
+    "@vscode/test-cli": "^0.0.12",
+    "@vscode/test-electron": "^2.5.2",
+    "esbuild": "^0.27.3",
+    "eslint": "^9.39.3",
+    "npm-run-all": "^4.1.5",
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.56.1",
+    "vite": "^8.0.12"
+  },
+  "packageManager": "yarn@1.22.22+sha512.a6b2f7906b721bba3d67d4aff083df04dad64c399707841b7acf00f6b133b7ac24255f2652fa22ae3534329dc6180534e98d17432037ff6fd140556e2bb3137e",
+  "dependencies": {
+    "@vscode/ripgrep": "^1.18.0",
+    "ignore": "^7.0.5",
+    "react": "^19.2.6",
+    "react-dom": "^19.2.6",
+    "ts-morph": "^28.0.0"
+  }
+}
