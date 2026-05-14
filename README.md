@@ -1,4 +1,4 @@
-# Better Search
+# Searchific
 
 Semantic search sidebar for TypeScript and JavaScript. Find variables, functions, and string literals by name — with inferred types shown inline.
 

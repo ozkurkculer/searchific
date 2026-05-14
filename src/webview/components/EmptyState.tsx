@@ -13,7 +13,7 @@ export function EmptyState({ state, errorMessage, query }: Props) {
     return (
       <div className="state-container">
         <div className="state-container__icon">⌕</div>
-        <p className="state-container__title">Better Search</p>
+        <p className="state-container__title">Searchific</p>
         <p className="state-container__sub">
           Filter by variable, function, or string.
           <br />

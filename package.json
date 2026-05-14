@@ -1,13 +1,13 @@
 {
-  "name": "better-search",
-  "displayName": "Better Search",
+  "name": "searchific",
+  "displayName": "Searchific",
   "description": "Semantic search for TypeScript — filter results by variable, function, or string with type inference.",
   "version": "0.0.1",
   "publisher": "ozkurkculer",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/ozkurkculer/better-search.git"
+    "url": "https://github.com/ozkurkculer/searchific.git"
   },
   "engines": {
     "vscode": "^1.120.0"
@@ -21,17 +21,17 @@
     "viewsContainers": {
       "activitybar": [
         {
-          "id": "better-search",
-          "title": "Better Search",
+          "id": "searchific",
+          "title": "Searchific",
           "icon": "media/search-icon.svg"
         }
       ]
     },
     "views": {
-      "better-search": [
+      "searchific": [
         {
           "type": "webview",
-          "id": "betterSearch.view",
+          "id": "searchific.view",
           "name": "Search",
           "visibility": "visible"
         }
@@ -39,8 +39,8 @@
     },
     "commands": [
       {
-        "command": "betterSearch.reveal",
-        "title": "Better Search: Reveal Location"
+        "command": "searchific.reveal",
+        "title": "Searchific: Reveal Location"
       }
     ]
   },

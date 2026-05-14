@@ -6,10 +6,10 @@ import { Parser } from '../engine/Parser';
 import { Matcher } from '../engine/Matcher';
 import { GitignoreFilter } from '../engine/GitignoreFilter';
 
-const STATE_KEY = 'betterSearch.uiState';
+const STATE_KEY = 'searchific.uiState';
 
 export class SearchViewProvider implements vscode.WebviewViewProvider {
-  public static readonly viewId = 'betterSearch.view';
+  public static readonly viewId = 'searchific.view';
 
   private view?: vscode.WebviewView;
   private gitignoreFilter = new GitignoreFilter();
@@ -97,7 +97,7 @@ export class SearchViewProvider implements vscode.WebviewViewProvider {
       await vscode.commands.executeCommand('vscode.open', uri, { selection: range, preview: true });
     } catch (err) {
       vscode.window.showErrorMessage(
-        `Better Search: failed to open ${file} — ${err instanceof Error ? err.message : err}`
+        `Searchific: failed to open ${file} — ${err instanceof Error ? err.message : err}`
       );
     }
   }
@@ -122,7 +122,7 @@ export class SearchViewProvider implements vscode.WebviewViewProvider {
       script-src 'nonce-${nonce}';" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="${styleUri}" />
-  <title>Better Search</title>
+  <title>Searchific</title>
 </head>
 <body>
   <div id="root"></div>
